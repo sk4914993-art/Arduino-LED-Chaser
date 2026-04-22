@@ -1,64 +1,27 @@
-# Arduino LED Chaser Project 💡
+int leds[] = {2,3,4,5,6,7,8,9};
+int total = 8;
 
-A simple and fun **LED Chaser (Running Light)** project built using **Arduino UNO** as part of my hands-on electronics practice.
+void setup() {
+  for(int i = 0; i < total; i++) {
+    pinMode(leds[i], OUTPUT);
+  }
+}
 
-This project was created to strengthen my core understanding of electronics, circuit connections, and Arduino programming through practical learning.
+void loop() {
 
----
+  // Forward Chase
+  for(int i = 0; i < total; i++) {
+    digitalWrite(leds[i], HIGH);
+    delay(100);
+    digitalWrite(leds[i], LOW);
+  }
 
-## 🚀 Project Overview
+  // Reverse Chase
+  for(int i = total - 1; i >= 0; i--) {
+    digitalWrite(leds[i], HIGH);
+    delay(100);
+    digitalWrite(leds[i], LOW);
+  }
 
-In this project, multiple LEDs glow in a sequential pattern, creating a running/chasing light effect.
-
-It is a beginner-friendly project that helps in understanding:
-- Arduino digital output pins
-- LED interfacing
-- Timing concepts
-- Basic breadboard circuit connections
-
----
-
-## 🛠️ Components Used
-
-- Arduino UNO
-- LEDs (multiple colors)
-- 220Ω Resistors
-- Breadboard
-- Jumper Wires
-- USB Cable
-
----
-
-## ⚡ Features
-
-- Sequential LED running effect
-- Smooth forward and reverse chasing pattern
-- Beginner-friendly electronics project
-- Great for Arduino practice
-
----
-
-## 📸 Project Images
-
-(Add your project photos here)
-
----
-
-## 🎯 Learning Outcome
-
-This project helped me improve my fundamentals in:
-
-- Electronics
-- Circuit design
-- Arduino basics
-- Practical problem solving
-
----
-
-## 🔥 Future Improvements
-
-- Speed control
-- Bluetooth control
-- WiFi control
-- Multiple lighting effects
+}
 
